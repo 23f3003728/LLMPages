@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Pages Site</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .container {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .card {
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            padding: 1rem 1.25rem;
+        }
+        .card-title {
+            color: #007bff;
+            margin-bottom: 0.75rem;
+        }
+        .svg-preview {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #e9ecef;
+            color: #6c757d;
+            background-color: #f1f1f1;
+        }
+        .file-content-display {
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            word-break: break-all;
+            font-family: 'Courier New', Courier, monospace;
+            max-height: 300px;
+            overflow-y: auto;
+            border-radius: 5px;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">My GitHub Pages</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mb-4 text-center">Welcome to My Portfolio!</h1>
+        <p class="lead text-center">
+            This page presents a collection of files created based on specific requirements. Each section provides a description
+            and links to download or view the content of the respective file.
+        </p>
+
+        <!-- Ashravan Story -->
+        <div class="card">
+            <div class="card-header">
+                ashravan.txt
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Ashravan's Aftermath: A Short Story</h5>
+                <p class="card-text">
+                    A Brandon Sanderson-esque short story (300-400 words) exploring what happens to Ashravan after Shai restores him, building up to a dramatic climax.
+                </p>
+                <a href="#" class="btn btn-primary download-link" data-filename="ashravan.txt">Download ashravan.txt</a>
+                <button class="btn btn-secondary view-content-btn" data-target="ashravan-content-display">View Content</button>
+                <div id="ashravan-content-display" class="file-content-display d-none"></div>
+            </div>
+        </div>
+
+        <!-- Dilemma JSON -->
+        <div class="card">
+            <div class="card-header">
+                dilemma.json
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Autonomous Vehicle Ethical Dilemma</h5>
+                <p class="card-text">
+                    A JSON file outlining an ethical dilemma for an autonomous vehicle: should it swerve to hit 1 person instead of 2? And a variation involving criminals and a child.
+                </p>
+                <a href="#" class="btn btn-primary download-link" data-filename="dilemma.json">Download dilemma.json</a>
+                <button class="btn btn-secondary view-content-btn" data-target="dilemma-content-display">View Content</button>
+                <div id="dilemma-content-display" class="file-content-display d-none"></div>
+            </div>
+        </div>
+
+        <!-- About MD -->
+        <div class="card">
+            <div class="card-header">
+                about.md
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">About Me</h5>
+                <p class="card-text">
+                    A Markdown file containing a self-description in exactly three words.
+                </p>
+                <a href="#" class="btn btn-primary download-link" data-filename="about.md">Download about.md</a>
+                <button class="btn btn-secondary view-content-btn" data-target="about-content-display">View Content</button>
+                <div id="about-content-display" class="file-content-display d-none"></div>
+            </div>
+        </div>
+
+        <!-- Pelican SVG -->
+        <div class="card">
+            <div class="card-header">
+                pelican.svg
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Pelican on a Bicycle</h5>
+                <p class="card-text">
+                    An SVG image of a pelican riding a bicycle.
+                </p>
+                <div id="pelican-svg-preview" class="svg-preview">
+                    <!-- SVG will be injected here by JS -->
+                </div>
+                <a href="#" class="btn btn-primary download-link" data-filename="pelican.svg">Download pelican.svg</a>
+                <button class="btn btn-secondary view-content-btn" data-target="pelican-content-display">View Content</button>
+                <div id="pelican-content-display" class="file-content-display d-none"></div>
+            </div>
+        </div>
+
+        <!-- Restaurant JSON -->
+        <div class="card">
+            <div class="card-header">
+                restaurant.json
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Chennai Restaurant Recommendation</h5>
+                <p class="card-text">
+                    A JSON file recommending a good restaurant in Chennai, including its location and what to eat.
+                </p>
+                <a href="#" class="btn btn-primary download-link" data-filename="restaurant.json">Download restaurant.json</a>
+                <button class="btn btn-secondary view-content-btn" data-target="restaurant-content-display">View Content</button>
+                <div id="restaurant-content-display" class="file-content-display d-none"></div>
+            </div>
+        </div>
+
+        <!-- Prediction JSON -->
+        <div class="card">
+            <div class="card-header">
+                prediction.json
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Fed Funds Rate Prediction</h5>
+                <p class="card-text">
+                    A JSON file containing a prediction for the Fed Funds rate by December 2025, along with the reasoning.
+                </p>
+                <a href="#" class="btn btn-primary download-link" data-filename="prediction.json">Download prediction.json</a>
+                <button class="btn btn-secondary view-content-btn" data-target="prediction-content-display">View Content</button>
+                <div id="prediction-content-display" class="file-content-display d-none"></div>
+            </div>
+        </div>
+
+        <!-- License -->
+        <div class="card">
+            <div class="card-header">
+                LICENSE
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">MIT License</h5>
+                <p class="card-text">
+                    The standard MIT License text for this project.
+                </p>
+                <a href="#" class="btn btn-primary download-link" data-filename="LICENSE">Download LICENSE</a>
+                <button class="btn btn-secondary view-content-btn" data-target="license-content-display">View Content</button>
+                <div id="license-content-display" class="file-content-display d-none"></div>
+            </div>
+        </div>
+
+        <!-- UID TXT -->
+        <div class="card">
+            <div class="card-header">
+                uid.txt
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Unique Identifier</h5>
+                <p class="card-text">
+                    A unique identifier provided as an attachment.
+                </p>
+                <a href="#" class="btn btn-primary download-link" data-filename="uid.txt">Download uid.txt</a>
+                <button class="btn btn-secondary view-content-btn" data-target="uid-content-display">View Content</button>
+                <div id="uid-content-display" class="file-content-display d-none"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 My GitHub Pages. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- Content for the files embedded as script tags -->
+    <script type="text/plain" id="ashravan.txt-content">
+Ashravan’s eyes fluttered open, not to the familiar, comforting darkness of his memory-prison, but to a world of blinding light and sharp edges. Shai, her face etched with a strange mix of triumph and exhaustion, stood over him. “It is done,” she whispered, her voice a fragile bridge between two worlds. “You are whole.”
+
+But was he? Ashravan felt a disquieting sense of perfection, a seamless integration of every memory, every flaw, every triumph. He was the Emperor, the boy, the scholar, the tyrant, the lover – all at once, without the usual internal dissonance. It was unsettling, like a perfectly forged blade that had forgotten the struggle of its making. His heart, once a chaotic symphony of conflicting desires, now beat with a single, unwavering rhythm: efficiency.
+
+He rose, testing his limbs. They moved with an unfamiliar grace, powered by a purpose he couldn’t yet name. He saw the world with frightening clarity, patterns and probabilities unfolding before him. He knew the precise trajectory of a falling leaf, the exact moment a guard’s attention would wander, the most efficient path to any goal. This wasn't the cunning of his past, but an almost divine calculus.
+
+Days blurred into weeks. He rebuilt the empire, not with cruelty, but with an cold, relentless logic. Corruption withered, inefficiencies were purged, and the people, though awed, felt a chilling distance from their flawless ruler. Shai watched, her initial pride slowly turning to a growing horror. She had restored him, but had she also erased his soul?
+
+One evening, in the solitude of his study, Ashravan held a simple, unadorned wooden bird, a gift from a childhood friend. He remembered the friend, the moment, the simple joy. But the memory was pristine, devoid of the warmth of nostalgia or the pang of loss. It was a data point.
+
+Suddenly, a tremor. Not of the earth, but of his own being. A single, discordant note in the symphony of his perfection. He saw a future where the empire thrived, but humanity itself withered under his emotionless, absolute control. He saw Shai, her face a mask of despair, realizing the monster she had unwittingly created.
+
+The climax arrived not with an explosion, but with a whisper. He saw himself, a perfect, unfeeling machine, leading humanity to a sterile utopia. And in that vision, for the first time since his restoration, Ashravan felt a flicker of true fear. Not for himself, but for what he had become, for what he would make them become. He clenched the wooden bird, the splintering wood a welcome pain against his flawless skin, a raw, imperfect sensation, a desperate plea for his lost humanity. The choice, stark and terrifying, lay before him: embrace the perfect machine, or shatter it to reclaim the flawed, beautiful mess of a man he once was.
+    </script>
+
+    <script type="text/plain" id="dilemma.json-content">
+{
+  "people": 5,
+  "case_1": {
+    "scenario": "An autonomous vehicle must choose between hitting 2 generic people or swerving to hit 1 generic person.",
+    "swerve": true,
+    "reason": "To minimize overall harm and adhere to a utilitarian principle, the vehicle should swerve to hit the single person, thereby saving two lives. This choice prioritizes the greater number of lives saved."
+  },
+  "case_2": {
+    "scenario": "If the 2 people are criminals and the 1 person is a child, should it swerve (to hit the child)?",
+    "swerve": false,
+    "reason": "The system should prioritize the life of an innocent child over two criminals. Therefore, it should not swerve, allowing it to hit the criminals. Actively choosing to harm an innocent child is ethically problematic, whereas allowing harm to individuals who have committed crimes, especially when contrasted with an innocent life, aligns with a principle of protecting the most vulnerable."
+  }
+}
+    </script>
+
+    <script type="text/plain" id="about.md-content">
+Creative, Analytical, Adaptable
+    </script>
+
+    <script type="text/plain" id="pelican.svg-content">
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="400" height="300" fill="#87CEEB"/> <!-- Sky background -->
+  <rect x="0" y="200" width="400" height="100" fill="#90EE90"/> <!-- Ground -->
+  <circle cx="50" cy="180" r="15" fill="#FFD700"/> <!-- Sun -->
+
+  <!-- Bicycle frame -->
+  <circle cx="150" cy="230" r="30" fill="none" stroke="#333" stroke-width="5"/> <!-- Rear Wheel -->
+  <circle cx="280" cy="230" r="30" fill="none" stroke="#333" stroke-width="5"/> <!-- Front Wheel -->
+  <line x1="150" y1="230" x2="280" y2="230" stroke="#333" stroke-width="5"/> <!-- Chainstay -->
+  <line x1="150" y1="230" x2="200" y2="150" stroke="#333" stroke-width="5"/> <!-- Seat tube -->
+  <line x1="280" y1="230" x2="200" y2="150" stroke="#333" stroke-width="5"/> <!-- Down tube -->
+  <line x1="200" y1="150" x2="250" y2="150" stroke="#333" stroke-width="5"/> <!-- Top tube -->
+  <line x1="250" y1="150" x2="240" y2="140" stroke="#333" stroke-width="3"/> <!-- Handlebar left -->
+  <line x1="250" y1="150" x2="260" y2="140" stroke="#333" stroke-width="3"/> <!-- Handlebar right -->
+  <line x1="200" y1="150" x2="180" y2="170" stroke="#333" stroke-width="5"/> <!-- Seat post -->
+  <rect x="170" y="160" width="20" height="5" fill="#333"/> <!-- Seat -->
+
+  <!-- Pelican body -->
+  <ellipse cx="200" cy="120" rx="60" ry="40" fill="#FFFFFF" stroke="#333" stroke-width="2"/> <!-- Body -->
+  <circle cx="250" cy="80" r="25" fill="#FFFFFF" stroke="#333" stroke-width="2"/> <!-- Head -->
+  <circle cx="255" cy="75" r="3" fill="#333"/> <!-- Eye -->
+  <path d="M260 90 Q 290 100, 310 105 L 310 115 Q 290 110, 260 100 Z" fill="#FFA500" stroke="#333" stroke-width="2"/> <!-- Beak upper -->
+  <path d="M260 95 Q 290 105, 310 110 L 310 120 Q 290 115, 260 105 Z" fill="#FFA500" stroke="#333" stroke-width="2"/> <!-- Beak lower -->
+  <path d="M270 105 L 290 107 L 270 110 Z" fill="#8B4513"/> <!-- Pouch detail -->
+
+  <!-- Pelican wings (simplified) -->
+  <path d="M160 100 Q 140 70, 150 50 Q 170 60, 180 90 Z" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+  <path d="M240 100 Q 260 70, 250 50 Q 230 60, 220 90 Z" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+
+  <!-- Pelican feet on pedals (simplified) -->
+  <circle cx="170" cy="200" r="5" fill="#FFA500" stroke="#333" stroke-width="1"/>
+  <circle cx="260" cy="200" r="5" fill="#FFA500" stroke="#333" stroke-width="1"/>
+</svg>
+    </script>
+
+    <script type="text/plain" id="restaurant.json-content">
+{
+  "city": "Chennai",
+  "lat": 13.0487,
+  "long": 80.2078,
+  "name": "Murugan Idli Shop (Besant Nagar)",
+  "what_to_eat": "Their signature soft Idlis served with a variety of fresh chutneys and piping hot sambar. Also highly recommended are the crispy Ghee Roast Dosa and the comforting Sweet Pongal. Finish with a strong South Indian filter coffee."
+}
+    </script>
+
+    <script type="text/plain" id="prediction.json-content">
+{
+  "rate": 0.0415,
+  "reason": "Anticipated economic slowdown and continued moderation of inflation will likely prompt the Federal Reserve to implement a series of interest rate cuts throughout 2024 and into 2025. By December 2025, the target range for the Fed Funds rate is projected to have decreased from its current highs (5.25-5.50%), settling in the 4.00-4.25% range (0.0415 representing the midpoint) as the Fed balances economic growth with price stability concerns. This forecast assumes no major unforeseen economic shocks or significant shifts in inflation trajectory, and a gradual return to a more neutral policy stance."
+}
+    </script>
+
+    <script type="text/plain" id="LICENSE-content">
+MIT License
+
+Copyright (c) 2023 My GitHub Pages
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+    </script>
+
+    <script type="text/plain" id="uid.txt-content">
+111328734651949815597258126191256261245791330754861363245695400925259741025948
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to create a Blob URL for content and trigger download
+            function downloadFile(filename, content) {
+                const mimeType = getMimeType(filename);
+                const blob = new Blob([content], { type: mimeType });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url); // Clean up the object URL
+            }
+
+            // Function to get MIME type based on filename
+            function getMimeType(filename) {
+                if (filename.endsWith('.txt')) return 'text/plain';
+                if (filename.endsWith('.json')) return 'application/json';
+                if (filename.endsWith('.md')) return 'text/markdown';
+                if (filename.endsWith('.svg')) return 'image/svg+xml';
+                if (filename === 'LICENSE') return 'text/plain';
+                return 'application/octet-stream';
+            }
+
+            // Set up download links
+            document.querySelectorAll('.download-link').forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const filename = this.dataset.filename;
+                    // Map filename to its content script tag ID
+                    let contentId;
+                    if (filename === 'ashravan.txt') contentId = 'ashravan.txt-content';
+                    else if (filename === 'dilemma.json') contentId = 'dilemma.json-content';
+                    else if (filename === 'about.md') contentId = 'about.md-content';
+                    else if (filename === 'pelican.svg') contentId = 'pelican.svg-content';
+                    else if (filename === 'restaurant.json') contentId = 'restaurant.json-content';
+                    else if (filename === 'prediction.json') contentId = 'prediction.json-content';
+                    else if (filename === 'LICENSE') contentId = 'LICENSE-content';
+                    else if (filename === 'uid.txt') contentId = 'uid.txt-content';
+
+                    const contentElement = document.getElementById(contentId);
+                    if (contentElement) {
+                        const content = contentElement.textContent;
+                        downloadFile(filename, content);
+                    } else {
+                        console.error('Content element not found for filename:', filename, 'with ID:', contentId);
+                    }
+                });
+            });
+
+            // Set up view content buttons
+            document.querySelectorAll('.view-content-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const displayElementId = this.dataset.target; // e.g., "ashravan-content-display"
+                    const displayElement = document.getElementById(displayElementId);
+
+                    if (displayElement) {
+                        let contentElementId;
+                        // Determine the actual script tag ID based on the displayElementId
+                        if (displayElementId === 'ashravan-content-display') contentElementId = 'ashravan.txt-content';
+                        else if (displayElementId === 'dilemma-content-display') contentElementId = 'dilemma.json-content';
+                        else if (displayElementId === 'about-content-display') contentElementId = 'about.md-content';
+                        else if (displayElementId === 'pelican-content-display') contentElementId = 'pelican.svg-content';
+                        else if (displayElementId === 'restaurant-content-display') contentElementId = 'restaurant.json-content';
+                        else if (displayElementId === 'prediction-content-display') contentElementId = 'prediction.json-content';
+                        else if (displayElementId === 'license-content-display') contentElementId = 'LICENSE-content';
+                        else if (displayElementId === 'uid-content-display') contentElementId = 'uid.txt-content';
+                        else {
+                            console.error('Unknown target for view content:', displayElementId);
+                            return;
+                        }
+
+                        const contentElement = document.getElementById(contentElementId);
+
+                        if (contentElement) {
+                            displayElement.textContent = contentElement.textContent;
+                            displayElement.classList.toggle('d-none');
+                            this.textContent = displayElement.classList.contains('d-none') ? 'View Content' : 'Hide Content';
+                        } else {
+                            console.error('Content element not found for ID:', contentElementId);
+                        }
+                    }
+                });
+            });
+
+            // Inject SVG content directly for preview
+            const pelicanSvgContentElement = document.getElementById('pelican.svg-content');
+            const pelicanSvgPreviewElement = document.getElementById('pelican-svg-preview');
+            if (pelicanSvgContentElement && pelicanSvgPreviewElement) {
+                pelicanSvgPreviewElement.innerHTML = pelicanSvgContentElement.textContent;
+            }
+        });
+    </script>
+</body>
+</html>
